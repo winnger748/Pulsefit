@@ -1,0 +1,463 @@
+ /* ---------- RESET & CSS VARIABLES ---------- */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    var(--pf-white): #FFFFFF;
+    --pf-offwhite: #F9F9FB;
+    --pf-dark: #0A0A0E;
+    --pf-dark-soft: #14141A;
+    --pf-electric: #FF6B00;
+    --pf-electric-glow: rgba(255, 107, 0, 0.15);
+    --pf-electric-light: rgba(255, 107, 0, 0.08);
+    --pf-gray-light: #F1F3F5;
+    --pf-gray-mid: #E9ECEF;
+    --pf-text-dark: #1E1E2A;
+    --pf-text-soft: #4A4A5A;
+    
+    --pf-section-gap: 5rem;
+    --pf-card-padding: 1.75rem;
+    --pf-gutter: 2rem;
+    
+    --pf-shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.03);
+    --pf-shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+    --pf-shadow-hover: 0 30px 40px -18px rgba(0, 0, 0, 0.15);
+    --pf-shadow-orange: 0 8px 20px rgba(255, 107, 0, 0.2);
+    
+    --pf-radius-card: 2rem;
+    --pf-radius-btn: 3rem;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--pf-white);
+    color: var(--pf-text-dark);
+    line-height: 1.4;
+    overflow-x: hidden;
+  }
+
+  .pf-heading-xl, .pf-heading-lg, h1, h2, h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  .pf-accent {
+    color: var(--pf-electric);
+  }
+
+  .pf-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  section {
+    padding: var(--pf-section-gap) 0;
+  }
+
+  /* ----- BUTTONS / CTA ----- */
+  .pf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    background: var(--pf-dark);
+    color: white;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--pf-radius-btn);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .pf-btn--outline {
+    background: transparent;
+    border: 1.5px solid var(--pf-dark);
+    color: var(--pf-dark);
+  }
+
+  .pf-btn--electric {
+    background: var(--pf-electric);
+    color: #0A0A0E;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+  }
+
+  .pf-btn--electric:hover {
+    transform: translateY(-3px);
+    background: #ff7a1a;
+    box-shadow: 0 12px 22px rgba(255, 107, 0, 0.4);
+  }
+
+  .pf-btn--dark:hover {
+    background: #2a2a35;
+    transform: translateY(-2px);
+  }
+
+  .pf-store-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--pf-dark);
+    padding: 0.7rem 1.5rem;
+    border-radius: 3rem;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .pf-store-badge i { font-size: 1.5rem; }
+  .pf-store-badge:hover { background: #1e1e2a; transform: translateY(-2px); }
+
+  /* ---- HERO split layout ---- */
+  .pf-hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .pf-hero-content {
+    flex: 1.2;
+    min-width: 280px;
+  }
+  .pf-hero-media {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .pf-mockup {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 3rem;
+    box-shadow: var(--pf-shadow-md), 0 25px 40px -12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  .pf-mockup:hover { transform: scale(1.02); }
+
+  /* BENTO GRID */
+  .pf-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .pf-bento-card {
+    background: var(--pf-offwhite);
+    border-radius: var(--pf-radius-card);
+    padding: var(--pf-card-padding);
+    transition: all 0.35s cubic-bezier(0.2, 0, 0, 1);
+    box-shadow: var(--pf-shadow-sm);
+    border: 1px solid rgba(0,0,0,0.02);
+  }
+  .pf-bento-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--pf-shadow-hover);
+    background: white;
+    border-color: var(--pf-electric);
+  }
+  .pf-card-icon {
+    font-size: 2.8rem;
+    color: var(--pf-electric);
+    margin-bottom: 1.5rem;
+  }
+  .pf-bento-card h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+  }
+  .pf-bento-card p {
+    color: var(--pf-text-soft);
+    line-height: 1.5;
+  }
+
+  /* ASYMMETRICAL SECTION */
+  .pf-asym-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+  }
+  .pf-asym-text {
+    flex: 1.2;
+    background: var(--pf-dark-soft);
+    padding: 3rem;
+    border-radius: 3rem;
+    color: white;
+    z-index: 2;
+    box-shadow: 20px 20px 0 var(--pf-electric);
+  }
+  .pf-asym-text h2 { color: var(--pf-electric); margin-bottom: 1rem; }
+  .pf-asym-text p { font-size: 1.2rem; line-height: 1.5; margin-top: 1rem; }
+  .pf-asym-img {
+    flex: 1;
+    position: relative;
+  }
+  .pf-asym-img img {
+    width: 100%;
+    border-radius: 2rem;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    box-shadow: var(--pf-shadow-md);
+  }
+
+  /* FAQ ACCORDION */
+  .pf-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .pf-faq-item {
+    background: var(--pf-gray-light);
+    border-radius: 1.5rem;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+  }
+  .pf-faq-question {
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    padding: 1.4rem 1.8rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: 'Syne', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background: var(--pf-gray-light);
+    border-radius: 1.5rem;
+    transition: background 0.2s;
+  }
+  .pf-faq-question i {
+    font-size: 1.3rem;
+    transition: transform 0.3s;
+    color: var(--pf-electric);
+  }
+  .pf-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.8rem;
+    transition: max-height 0.4s ease-out, padding 0.2s;
+    background: var(--pf-gray-light);
+    border-radius: 0 0 1.5rem 1.5rem;
+    color: var(--pf-text-soft);
+    line-height: 1.5;
+  }
+  .pf-faq-answer p {
+    padding-bottom: 1.5rem;
+  }
+  .pf-faq-item.active .pf-faq-answer {
+    max-height: 220px;
+    padding: 0 1.8rem;
+  }
+  .pf-faq-item.active .pf-faq-question i {
+    transform: rotate(180deg);
+  }
+  .pf-faq-item.active {
+    background: white;
+    border-color: var(--pf-electric);
+    box-shadow: var(--pf-shadow-sm);
+  }
+
+  /* ----- DARK FOOTER ----- */
+  .pf-footer {
+    background: var(--pf-dark);
+    color: #ccc;
+    margin-top: 3rem;
+    padding: 3rem 0 2rem;
+  }
+  .pf-footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .pf-footer-logo h3 {
+    color: var(--pf-electric);
+    font-size: 1.8rem;
+  }
+  .pf-footer-links {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .pf-footer-links a {
+    color: #dddddd;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .pf-footer-links a:hover { color: var(--pf-electric); }
+  .pf-copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #2a2a35;
+    font-size: 0.85rem;
+  }
+
+  /* ----- LOGO FIX ----- */
+  .pf-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.9rem;
+    letter-spacing: normal;
+    text-transform: none;
+    transform: none;
+    display: inline-flex;
+    align-items: center;
+    color: var(--pf-dark);
+    line-height: 1;
+  }
+  .pf-logo span {
+    color: var(--pf-electric);
+    font-weight: 800;
+    letter-spacing: normal;
+    transform: none;
+  }
+  .pf-logo, .pf-logo * {
+    transform: none;
+    scale: 1;
+  }
+
+  /* ----- MOBILE HAMBURGER MENU ----- */
+  .pf-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 1001;
+  }
+  .pf-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    transition: left 0.3s ease-in-out;
+  }
+  .pf-nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--pf-text-dark);
+    transition: color 0.2s;
+  }
+  .pf-nav-links a:hover { color: var(--pf-electric); }
+  
+  /* FIX: Button Hover Color Specificity */
+  .pf-nav-links a.pf-btn--electric:hover {
+    color: #0A0A0E;
+  }
+  
+  .pf-hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--pf-dark);
+    z-index: 1002;
+    transition: opacity 0.2s;
+  }
+  .pf-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 998;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .pf-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .pf-hamburger {
+      display: block;
+    }
+    .pf-nav-links {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 5rem 2rem;
+      box-shadow: 5px 0 30px rgba(0, 0, 0, 0.15);
+      transition: left 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      z-index: 1000;
+      gap: 2rem;
+      border-radius: 0 2rem 2rem 0;
+    }
+    .pf-nav-links.active {
+      left: 0;
+    }
+    .pf-nav-links li {
+      text-align: left;
+      width: 100%;
+    }
+    .pf-nav-links a {
+      font-size: 1.4rem;
+      font-weight: 600;
+      display: block;
+      padding: 0.5rem 0;
+    }
+    .pf-asym-text { padding: 2rem; box-shadow: 12px 12px 0 var(--pf-electric);}
+    .pf-hero-content .pf-store-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.8rem;
+    }
+    .pf-logo {
+      font-size: 1.7rem;
+    }
+
+    /* FIX: Mobile Footer Center Alignment */
+    .pf-footer-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .pf-footer-links {
+      justify-content: center;
+    }
+    .pf-social {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  /* Utilities */
+  .pf-mb-2 { margin-bottom: 1rem; }
+  .pf-flex-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  img { max-width: 100%; display: block; }
